@@ -130,12 +130,11 @@ label {
   display: flex;
   justify-content: space-between;
   line-height: 1.5rem;
-  padding: 10px;
   border-radius: 6px;
   box-shadow: 2px 2px 2px 0 #969696, 2px 2px 4px 0 #a0a0a0, 2px 2px 10px 0 #aaaaaa, -3px -3px 3px 0 white, -3px -3px 8px 0 whitesmoke, -3px -3px 15px 0 #ebebeb;
 }
 .todo-list__item span {
-  padding: 10px;
+  margin: 20px;
 }
 
 .error {
@@ -146,7 +145,10 @@ label {
 
 .delete {
   transition: 0.15s;
-  padding: 10px;
+  padding: 20px;
+  display: inline-block;
+  line-height: 100%;
+  background-color: rgba(199, 199, 199, 0.9);
 }
 .delete:hover {
   color: #dc143c;
