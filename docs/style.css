@@ -118,7 +118,10 @@ label {
   outline: none;
 }
 .todo-form__button:focus {
-  outline: 1px solid #333;
+  outline: none;
+  border: 1px solid #808080;
+  border-radius: 6px;
+  margin: 3px;
 }
 
 .todo-list {

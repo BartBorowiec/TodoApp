@@ -64,7 +64,10 @@ label {
     }
 
     &:focus {
-        outline: 1px solid $black;
+        outline: none;
+        border: 1px solid $grey;
+        border-radius: 6px;
+        margin:3px;
     }
 }
 
