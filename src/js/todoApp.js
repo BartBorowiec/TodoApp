@@ -1,7 +1,11 @@
+import Sortable from 'sortablejs';
+
 class TodoApp {
     constructor() {
         this.tasks = JSON.parse(window.localStorage.getItem("tasks")) || [];
-        document.querySelector("#todoAppButton").addEventListener("click", this.handleClick.bind(this));
+        const el = document.getElementById('todoAppList');
+        const sortable = Sortable.create(el);
+        document.querySelector("#todoAppButton").addEventListener("click", this.handleAdd.bind(this));
         document.querySelector("#todoAppList").addEventListener("click", this.handleRemove.bind(this));
         if (this.tasks.length > 0) this.showTodos();
     }
@@ -27,19 +31,22 @@ class TodoApp {
         })
     }
     // handle button click
-    handleClick(event) {
+    handleAdd(event) {
         event.preventDefault();
         document.querySelector(".error").innerText = "";
         const input = document.querySelector("#todoAppInput");
         const newTask = input.value.trim();
         input.value = "";
-        if (newTask !== "") {
+        if (newTask === "") {
+            document.querySelector(".error").innerText = "Wprowadź zadanie";
+        } else if (this.tasks.indexOf(newTask)!== -1) {
+            document.querySelector(".error").innerText = "Zadanie już istnieje";
+            return;
+        } else {
             this.tasks.push(newTask);
             this.saveTodos();
             this.showTodos();
-        } else {
-            document.querySelector(".error").innerText = "Wprowadź zadanie";
-        } 
+        }
     }
     // handle remove
     handleRemove(event) {
