@@ -16,7 +16,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "style.css"
+      filename: "./style.css"
     }),
     new HtmlWebpackPlugin({
       title: "TodoApp",
