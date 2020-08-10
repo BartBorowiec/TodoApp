@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoApp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="style.css" rel="stylesheet"></head>
+<body>
+    
+    <div class="wrapper">
+        <h1 class="header">Todo App</h1>
+        <form id="todoAppForm" class="todo-form" autocomplete="off">
+            <fieldset>
+                <label for="todoAppInput">Nowe zadanie:</label>
+                <input class="todo-form__input" id="todoAppInput" type="text" placeholder="Wprowadź nowe zadanie">
+            </fieldset>
+            <button class="todo-form__button" id="todoAppButton">Dodaj</button>
+        </form>
+        <span class="error"></span>
+        <ol class="todo-list" id="todoAppList"></ol>
+    </div>
+<script src="bundle.js"></script></body>
+</html>
