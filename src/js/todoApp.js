@@ -10,16 +10,13 @@ class TodoApp {
         document.querySelector("#todoAppList").addEventListener("click", this.handleRemove.bind(this));
         this.showTodos();
     }
-    // save todos to localStorage
     saveTodos(tasks) {
         window.localStorage.setItem("tasks", JSON.stringify(tasks));
         this.showTodos();
     }
-    // load todos from localStorage
     loadTodos() {
         return JSON.parse(window.localStorage.getItem("tasks")) || [];
     }
-    // show todos on page
     showTodos() {
         document.querySelector("#todoAppList").innerHTML = "";
         const tasks = this.loadTodos();
@@ -32,7 +29,6 @@ class TodoApp {
             `
         })
     }
-    // handle button click
     handleAdd(event) {
         event.preventDefault();
         document.querySelector(".error").innerText = "";
@@ -50,7 +46,6 @@ class TodoApp {
             this.saveTodos(tasks);
         }
     }
-    // handle remove
     handleRemove(event) {
         event.preventDefault();
         if (Array.from(event.target.classList).indexOf("delete") === -1) return;
