@@ -1,0 +1,105 @@
+.header {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    margin: 20px 0;
+    font-size: 2rem;
+}
+.wrapper {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: $wrapper-background;
+    border-radius: 10px;
+}
+.todo-form {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+label {
+    color: $grey;
+    display: block;
+    font-size: 0.8rem;
+    margin-left: 8px;
+}
+.todo-form__input {
+    line-height: 1.2rem;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid $lightgrey;
+    border-radius: 6px;
+    margin: 4px 4px 4px 0;
+
+    &:focus {
+        border: 1px solid $grey;
+        outline: none;
+    }
+}
+
+.todo-form__button {
+    padding: 8px 24px;
+    margin: 4px;
+    font-size: 1.2rem;
+    color: $white;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 6px;
+    background-color: $success-green;
+    box-shadow: 0 0 3px 0 $black;
+    display: inline-block;
+
+    &:hover {
+        background-color: darken($success-green, 5%);
+    }
+
+    &:active {
+        box-shadow: 0 0 3px 0 inset $black;
+        background-color: darken($success-green, 10%);
+        outline: none;
+    }
+
+    &:focus {
+        outline: 1px solid $black;
+    }
+}
+
+.todo-list {
+    font-size: 1.2rem;
+}
+.todo-list__item {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.5rem;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px 0 rgb(150, 150, 150),
+                2px 2px 4px 0 rgb(160, 160, 160),
+                2px 2px 10px 0 rgb(170, 170, 170),
+                -3px -3px 3px 0 rgb(255, 255, 255),
+                -3px -3px 8px 0 rgb(245, 245, 245),
+                -3px -3px 15px 0 rgb(235, 235, 235);
+    span {
+        padding: 10px;
+    }
+}
+
+.error {
+    color: $crimson;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.delete {
+    transition: 0.15s;
+    padding: 10px;
+    
+    &:hover {
+        color: $crimson;
+    }
+}
